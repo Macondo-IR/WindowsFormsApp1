@@ -25,18 +25,17 @@ namespace SimpleManageLoanV01
             if (!string.IsNullOrEmpty(msg)) {
                 MessageBox.Show("هیچ وام فعالی نداره که پرداخت کنی");
             }
-        }
-
-
-        private void numAmount_ValueChanged(object sender, EventArgs e)
-        {
             SetString();
+
         }
+
+
+  
 
         private void SetString()
         {
             var amount = (long)numAmount.Value;
-            var txt=Num2Text.ToFarsi(amount);
+            var txt=NumberFormat.ToFarsi(amount);
             lblAmount.Text = txt;
 
         }
@@ -65,6 +64,23 @@ namespace SimpleManageLoanV01
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+
+        }
+
+        private void numAmount_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void numAmount_KeyUp(object sender, KeyEventArgs e)
+        {
+            SetString();
+
+        }
+
+        private void numAmount_ValueChanged(object sender, EventArgs e)
+        {
+            SetString();
 
         }
     }

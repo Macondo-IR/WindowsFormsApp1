@@ -69,12 +69,14 @@
             this.numAmount.Name = "numAmount";
             this.numAmount.Size = new System.Drawing.Size(171, 20);
             this.numAmount.TabIndex = 18;
+            this.numAmount.ThousandsSeparator = true;
             this.numAmount.Value = new decimal(new int[] {
             20000000,
             0,
             0,
             0});
             this.numAmount.ValueChanged += new System.EventHandler(this.numAmount_ValueChanged);
+            this.numAmount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numAmount_KeyUp);
             // 
             // label1
             // 

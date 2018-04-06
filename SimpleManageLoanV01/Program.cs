@@ -17,10 +17,12 @@ namespace SimpleManageLoanV01
         {
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
-         //   Application.Run(new Main());
+             Application.Run(new Main());/*;*/
+             //Application.Run(new Form2());/*;*/
+           //Application.Run(new Form2());
             //    //Application.Run(new Receipt());
             //    //Application.Run(new PersonelAdding());
-             Application.Run(new SetDatabaseLocationcs());
+           //  Application.Run(new SetDatabaseLocationcs());
          //IEnumerable<Personel> _personels;
          //   string error = "";
          //   _personels = (IList<Personel>)DAL.GetDAta.GetPersonels(ref error);

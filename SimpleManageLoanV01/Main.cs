@@ -138,5 +138,56 @@ namespace SimpleManageLoanV01
 
             }
         }
+
+
+
+
+
+        private void buttonItem7_Click(object sender, EventArgs e)
+        {
+            Find();
+        }
+
+        private void Find()
+        {
+            try
+            {
+                var personelid = Int16.Parse(txtPersonel.Text);
+                var error = "";
+                var person = DAL.GetDAta.GetPersonel(personelid, ref error);
+                if (person.Id == 0)
+                {
+                    MessageBox.Show("پرونده ای برای نمایش وجود ندارد.");
+                }
+                else
+                {
+                    var form = new PersonelForm(person);
+                    form.Show();
+                }
+
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
+            }
+        }
+
+        private void txtPersonel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Find();
+            }
+        }
+
+        private void btnReport1_Click(object sender, EventArgs e)
+        {
+            //یک لیست از بدهکاران که وام دارند و مبلغ بدهی انها درست کن 
+            //
+            var cmd = @"SELECT Personel.LastName, Personel.FirstName, Loan.Amount, Loan.PersonelID, Loan.ReceiptDate, Loan.Expired
+FROM Personel INNER JOIN Loan ON Personel.ID = Loan.PersonelID
+where Loan.Expired<> TRUE";
+        }
     }
 }

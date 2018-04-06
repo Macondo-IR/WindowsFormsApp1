@@ -19,7 +19,7 @@ namespace DAL
                 // Read the stream to a string, and write the string to the console.
                  line = sr.ReadToEnd();
             }
-            return string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0}.accdb;Persist Security Info = False;", line);
+            return string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Persist Security Info = False;", line);
 
 
         }

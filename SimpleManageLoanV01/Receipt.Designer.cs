@@ -105,18 +105,20 @@
             this.numAmount.Name = "numAmount";
             this.numAmount.Size = new System.Drawing.Size(171, 20);
             this.numAmount.TabIndex = 18;
+            this.numAmount.ThousandsSeparator = true;
             this.numAmount.Value = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.numAmount.ValueChanged += new System.EventHandler(this.numAmount_ValueChanged);
+            this.numAmount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numAmount_KeyUp);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(7, 165);
+            this.panel2.Location = new System.Drawing.Point(7, 160);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(285, 40);
             this.panel2.TabIndex = 19;
@@ -171,7 +173,7 @@
             // 
             this.panel4.Controls.Add(this.txtReceipt);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(7, 216);
+            this.panel4.Location = new System.Drawing.Point(7, 211);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(285, 40);
             this.panel4.TabIndex = 26;
@@ -247,7 +249,7 @@
             // 
             this.panel7.Controls.Add(this.btnCancel);
             this.panel7.Controls.Add(this.buttonX1);
-            this.panel7.Location = new System.Drawing.Point(7, 267);
+            this.panel7.Location = new System.Drawing.Point(7, 262);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(285, 40);
             this.panel7.TabIndex = 30;

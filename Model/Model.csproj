@@ -47,7 +47,7 @@
     <Compile Include="LastLoanGeneralInfo.cs" />
     <Compile Include="PersonelGeneralInfo.cs" />
     <Compile Include="Receipt.cs" />
-    <Compile Include="Num2Text.cs" />
+    <Compile Include="NumberFormat.cs" />
     <Compile Include="Loan.cs" />
     <Compile Include="Personel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -297,6 +297,43 @@ namespace DAL
             }
 
         }
+        public static Personel GetPersonel(int personelId, ref string message)
+        {
+            //var cmd = string.Format("SELECT * FROM Personel where FirstName like '%{0}%' or  LastName like '%{0}%'  ", txtName.Text);
+            var cmd = string.Format("SELECT * FROM Personel  where Id ={0}",personelId);
+            var p = new Personel();
+
+
+            try
+            {
+                string dataBase = Helper.GetConnectionString();
+                DataTable dataTable = new DataTable();
+                using (OleDbConnection connection = new OleDbConnection(dataBase))
+                {
+                    OleDbCommand selectCommand = new OleDbCommand(cmd, connection);
+                    connection.Open();
+                    using (OleDbDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            p.FirstName = (string)reader["FirstName"];
+                            p.LastName = (string)reader["LastName"];
+                            p.Id = (int)reader["ID"];
+                         }
+                    }
+                    connection.Close();
+                }
+      
+                return p ;
+
+            }
+            catch (Exception ex)
+            {
+                message = ex.ToString();
+                return null;
+            }
+
+        }
         public static IEnumerable<Personel> GetPersonels( ref string message)
         {
             //var cmd = string.Format("SELECT * FROM Personel where FirstName like '%{0}%' or  LastName like '%{0}%'  ", txtName.Text);

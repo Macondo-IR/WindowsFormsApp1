@@ -33,7 +33,7 @@ namespace SimpleManageLoanV01
         private void SetString()
         {
             var amount = (long)numAmount.Value;
-            var txt = Num2Text.ToFarsi(amount);
+            var txt = NumberFormat.ToFarsi(amount);
             lblAmount.Text = txt;
 
         }
@@ -72,6 +72,12 @@ namespace SimpleManageLoanV01
             DAL.GetDAta.SimpleCommand(cmd,ref error);
             MessageBox.Show(error);
             this.Close();
+        }
+
+        private void numAmount_KeyUp(object sender, KeyEventArgs e)
+        {
+            SetString();
+
         }
     }
 }

@@ -48,10 +48,10 @@ namespace SimpleManageLoanV01
             }
             else
             {
-                txtLoanAmount.Text = p.LoanAmount.ToString();
+                txtLoanAmount.Text = NumberFormat.NumberDigitFormat(p.LoanAmount.ToString());
                 txtLoanReceipt.Text = p.LoanReceiptDate;
                 txtLastPayment.Text = p.LasPayment;
-                txtDebt.Text = p.LoanDebtAmount;
+                txtDebt.Text = NumberFormat.NumberDigitFormat(p.LoanDebtAmount);
 
             }
         }
